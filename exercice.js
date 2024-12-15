@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         divForme.classList.add("forme-container");
 
         const img = document.createElement("img");
-        img.src = `images/${forme}.jpg`;
+        img.src = `image/${forme}.jpeg`;
         img.alt = forme;
         img.classList.add("image-forme");
 
