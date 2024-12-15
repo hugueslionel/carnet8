@@ -77,37 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Exercice 4 : Nombres de 1 à 100 (20 colonnes x 5 lignes)
     createExercise("exercice4", numbers, "exercice4", 5, 20, "'Script Ecole 2', Arial, sans-serif");
 
-    // Exercice  : lire les nombres (1 ligne)
+    // Exercice 5 : lire les nombres (1 ligne)
     createExercise("exercice5", lireNombres, "exercice5", 1, 20, "'Script Ecole 2', Arial, sans-serif");
 });
-// **Exercice 6** : Formes géométriques
-    const exercice6 = document.getElementById("exercice6");
-    const formes = ["carre", "rectangle", "triangle", "ovale", "losange", "rond"];
-    const containerFormes = document.createElement("div");
 
-    formes.forEach((forme, index) => {
-        const divForme = document.createElement("div");
-        divForme.classList.add("forme-container");
-
-        const img = document.createElement("img");
-        img.src = `image/${forme}.jpeg`;
-        img.alt = forme;
-        img.classList.add("image-forme");
-
-        const caseForme = document.createElement("div");
-        caseForme.classList.add("case");
-        caseForme.style.backgroundColor = progression.exercice6?.[index] ? "#D0F0C0" : "transparent";
-
-        caseForme.addEventListener("click", () => {
-            progression.exercice6 = progression.exercice6 || [];
-            progression.exercice6[index] = !progression.exercice6[index];
-            sauvegarderProgression("exercice6", progression.exercice6);
-            caseForme.style.backgroundColor = progression.exercice6[index] ? "#D0F0C0" : "transparent";
-        });
-
-        divForme.appendChild(img);
-        divForme.appendChild(caseForme);
-        containerFormes.appendChild(divForme);
-    });
-
-    exercice6.appendChild(containerFormes);
