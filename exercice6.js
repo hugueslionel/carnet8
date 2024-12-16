@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Création de l'image
             const img = document.createElement("img");
-            img.src = `images/${imageName}.png`; // Chemin des images
+            img.src = `image/${imageName}.jpeg`; // Chemin des images
             img.alt = imageName;
             img.style.width = "100px";
             img.style.height = "100px";
