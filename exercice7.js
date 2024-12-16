@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const img = document.createElement("img");
             img.src = `image/${imageName}`; // Chemin des images
             img.alt = `Objet ${index + 1}`;
-            img.style.width = "100px";
-            img.style.height = "100px";
+            img.style.width = "300px";
+            img.style.height = "300px";
             img.style.display = "block";
             img.style.margin = "0 auto 10px";
 
