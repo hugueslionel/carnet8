@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", function () {
                     const td = document.createElement("td");
                     td.textContent = data[index++];
                     td.style.fontFamily = fontFamily;
-                    td.style.fontSize = "18px";
-                    td.style.padding = "8px";
+                    td.style.fontSize = "26px";
+                    td.style.padding = "12px";
                     td.style.textAlign = "center";
-                    td.style.border = "1px solid #ccc";
+                    td.style.border = "2px solid #333";
                     td.style.cursor = "pointer";
                     td.style.backgroundColor = savedStates[`${row}-${col}`] ? "#d4edda" : "#fff";
 
