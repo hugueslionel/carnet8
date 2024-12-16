@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
         renderTable();
     }
        // Fonction pour créer l'exercice des images de formes géométriques
-    function createImageExercise(containerId, images, storageKey) {
+    function createImageExercise(containerId, image, storageKey) {
         const container = document.getElementById(containerId);
         container.innerHTML = ""; // Nettoie le conteneur avant d'afficher
 
@@ -77,14 +77,14 @@ document.addEventListener("DOMContentLoaded", function () {
         grid.style.gap = "20px";
         grid.style.justifyContent = "center";
 
-        images.forEach((imageName, index) => {
+        image.forEach((imageName, index) => {
             // Conteneur pour chaque image et sa case
             const item = document.createElement("div");
             item.style.textAlign = "center";
 
             // Création de l'image
             const img = document.createElement("img");
-            img.src = `images/${imageName}.png`; // Chemin des images
+            img.src = `image/${imageName}.jpeg`; // Chemin des images
             img.alt = imageName;
             img.style.width = "100px";
             img.style.height = "100px";
