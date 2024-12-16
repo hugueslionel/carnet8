@@ -64,8 +64,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         renderTable();
     }
-       // Fonction pour créer l'exercice des images de formes géométriques
-    function createImageExercise(containerId, image, storageKey) {
+      document.addEventListener("DOMContentLoaded", function () {
+    const studentName = new URLSearchParams(window.location.search).get("name");
+
+    // Fonction pour créer l'exercice des images de formes géométriques
+    function createImageExercise(containerId, images, storageKey) {
         const container = document.getElementById(containerId);
         container.innerHTML = ""; // Nettoie le conteneur avant d'afficher
 
@@ -127,6 +130,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Liste des formes géométriques pour l'exercice 6
     const shapes = ["carre", "losange", "triangle", "rectangle", "ovale", "rond"];
+
+    // Appel de la fonction pour créer l'exercice 6
+    createImageExercise("exercice6", shapes, "exercice6");
+});
 
   
 
