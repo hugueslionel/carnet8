@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const grid = document.createElement("div");
         grid.style.display = "flex";
         grid.style.flexWrap = "wrap";
-        grid.style.gap = "20px";
+        grid.style.gap = "40px";
         grid.style.justifyContent = "center";
 
         images.forEach((imageName, index) => {
