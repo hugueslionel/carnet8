@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const grid = document.createElement("div");
         grid.style.display = "flex";
         grid.style.flexWrap = "wrap";
-        grid.style.gap = "20px";
+        grid.style.gap = "60px";
         grid.style.justifyContent = "center";
 
         images.forEach((imageName, index) => {
@@ -23,14 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
             const img = document.createElement("img");
             img.src = `image/${imageName}.jpeg`; // Chemin des images
             img.alt = imageName;
-            img.style.width = "100px";
-            img.style.height = "100px";
+            img.style.width = "150px";
+            img.style.height = "150px";
             img.style.display = "block";
             img.style.margin = "0 auto 10px";
 
             // Case cliquable
             const box = document.createElement("div");
-            box.style.width = "100px";
+            box.style.width = "50px";
             box.style.height = "30px";
             box.style.border = "1px solid #ccc";
             box.style.margin = "0 auto";
