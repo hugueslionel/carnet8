@@ -64,6 +64,71 @@ document.addEventListener("DOMContentLoaded", function () {
 
         renderTable();
     }
+       // Fonction pour créer l'exercice des images de formes géométriques
+    function createImageExercise(containerId, images, storageKey) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = ""; // Nettoie le conteneur avant d'afficher
+
+        let savedStates = JSON.parse(localStorage.getItem(`${storageKey}_${studentName}`)) || {};
+
+        const grid = document.createElement("div");
+        grid.style.display = "flex";
+        grid.style.flexWrap = "wrap";
+        grid.style.gap = "20px";
+        grid.style.justifyContent = "center";
+
+        images.forEach((imageName, index) => {
+            // Conteneur pour chaque image et sa case
+            const item = document.createElement("div");
+            item.style.textAlign = "center";
+
+            // Création de l'image
+            const img = document.createElement("img");
+            img.src = `images/${imageName}.png`; // Chemin des images
+            img.alt = imageName;
+            img.style.width = "100px";
+            img.style.height = "100px";
+            img.style.display = "block";
+            img.style.margin = "0 auto 10px";
+
+            // Case cliquable
+            const box = document.createElement("div");
+            box.style.width = "100px";
+            box.style.height = "30px";
+            box.style.border = "1px solid #ccc";
+            box.style.margin = "0 auto";
+            box.style.cursor = "pointer";
+            box.style.backgroundColor = savedStates[index] ? "#d4edda" : "#fff";
+
+            // Gestion du clic pour changer la couleur
+            box.addEventListener("click", () => {
+                if (savedStates[index]) {
+                    box.style.backgroundColor = "#fff";
+                    delete savedStates[index];
+                } else {
+                    box.style.backgroundColor = "#d4edda";
+                    savedStates[index] = true;
+                }
+                saveState();
+            });
+
+            function saveState() {
+                localStorage.setItem(`${storageKey}_${studentName}`, JSON.stringify(savedStates));
+            }
+
+            // Ajout de l'image et de la case au conteneur
+            item.appendChild(img);
+            item.appendChild(box);
+            grid.appendChild(item);
+        });
+
+        container.appendChild(grid);
+    }
+
+    // Liste des formes géométriques pour l'exercice 6
+    const shapes = ["carre", "losange", "triangle", "rectangle", "ovale", "rond"];
+
+  
 
     // Exercice 1 : Lettres majuscules
     createExercise("exercice1", alphabetUpper, "exercice1", 2, 13);
@@ -80,4 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Exercice 5 : lire les nombres (1 ligne)
     createExercise("exercice5", lireNombres, "exercice5", 1, 20, "'Script Ecole 2', Arial, sans-serif");
 });
-
+   
+  // Appel de la fonction pour créer l'exercice 6
+    createImageExercise("exercice6", shapes, "exercice6");
+});
