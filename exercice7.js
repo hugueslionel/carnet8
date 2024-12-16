@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Case cliquable
             const box = document.createElement("div");
-            box.style.width = "100px";
+            box.style.width = "40px";
             box.style.height = "30px";
             box.style.border = "1px solid #ccc";
             box.style.margin = "0 auto";
